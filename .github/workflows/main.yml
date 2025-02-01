@@ -22,4 +22,5 @@ jobs:
       - name: Run Kali Container
         run: |
           docker run -d --name kali-container kalilinux/kali-rolling sleep infinity
-          docker exec kali-container bash -c "echo Kali Linux is running"
+          docker exec kali-container bash -c "apt update && apt install -y net-tools"
+          docker exec kali-container bash -c "ifconfig"
